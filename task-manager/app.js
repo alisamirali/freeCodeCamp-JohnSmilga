@@ -23,8 +23,9 @@ const start = async () => {
   try {
     await connectDB(process.env.MONGODB_URI);
     app.listen(PORT, () => console.log(`Server Is Running On PORT: ${PORT}`));
+    console.log("MongoDB URI:", process.env.MONGODB_URI);
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
